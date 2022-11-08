@@ -1,0 +1,16 @@
+.logo {
+    color: #000;
+    font-family: 'Inter';
+    font-size: 62.4px;
+    text-shadow: 6px 4px 7px rgba(0, 0, 0, 0.25);
+    position: relative;
+
+    &::before {
+        content: 'опросы';
+        font-size: 15.6px;
+        line-height: 19px;
+        position: absolute;
+        right: 0;
+        bottom: -10px;
+    }
+}
