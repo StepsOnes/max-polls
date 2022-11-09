@@ -44,3 +44,25 @@
     </div>
 </body>
 </html>
+<?php
+
+$host = 'localhost'; // имя хоста
+$user = 'root';      // имя пользователя
+$pass = '';          // пароль
+$name = 'mydb';      // имя базы данных
+
+$link = mysqli_connect($host, $user, $pass, $name);
+
+$email=$_GET['email'];
+$password=$_GET['password'];
+
+$query="INSERT INTO users SET email='$email', password='password'";
+
+if(!empty($email) and !empty($password)){
+
+mysqli_query($link,$query) or die(mysqli_error($link));;
+
+header('Refresh: 2 url=index.html');
+
+}
+?>
