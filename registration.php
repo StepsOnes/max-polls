@@ -49,20 +49,23 @@
 $host = 'localhost'; // имя хоста
 $user = 'root';      // имя пользователя
 $pass = '';          // пароль
-$name = 'mydb';      // имя базы данных
+$name = 'max-polls';      // имя базы данных
 
 $link = mysqli_connect($host, $user, $pass, $name);
 
 $email=$_POST['email'];
 $password=$_POST['password'];
 
-$query="INSERT INTO users SET email='$email', password='password'";
 
 if(!empty($email) and !empty($password)){
 
-mysqli_query($link,$query) or die(mysqli_error($link));;
+$query="INSERT INTO users SET email='$email', password='$password'";
+
+mysqli_query($link,$query) or die(mysqli_error($link));
 
 header('Refresh: 2 url=index.html');
 
 }
+
+
 ?>
