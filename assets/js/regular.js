@@ -7,13 +7,13 @@ formData.onsubmit = function()
 {
     if (!validateEmail())
     {
-        alert('Почта не подходит!')
-        formEmail.style.border= "1px solid red";
+        document.querySelector('.email__label').classList.add('error-email');
         return false
     }
     if (!validatePassword())
     {
-        alert('Минимум 8 символов')
+        alert(false)
+        document.querySelector('.password__label').classList.add('error-password')
         return false
     }
 }
@@ -25,6 +25,6 @@ function validateEmail() {
 }
 
 function validatePassword() {
-    const regPassword = /[A-Za-z0-9]{4, 8}]/;
-    return regPassword.test(formPassword.value)
+    const regPassword = /.{4, 8}/;
+    return regPassword.test(formPassword.value);
 }

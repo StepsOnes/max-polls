@@ -61,6 +61,7 @@
   flex-direction: column;
   gap: 20px;
   margin-bottom: 34px;
+  position: relative;
 }
 
 .account-authorization {
@@ -76,5 +77,31 @@
 }
 
 .error-email {
+  border: 1px solid #f34646;
+  border-radius: 10px;
+  color: #f34646;
 
+  &::after {
+    position: absolute;
+    content: 'Некорректная почта';
+    font-size: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -30px;
+  }
+}
+
+.error-password {
+  border: 1px solid #f34646;
+  border-radius: 10px;
+  color: #f34646;
+
+  &::after {
+    position: absolute;
+    content: 'Некорректный пароль. Используйте только латинские символы!';
+    font-size: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -10px;
+  }
 }
