@@ -2,9 +2,8 @@ const formData = document.querySelector('#authorization');
 let formEmail = formData.email;
 let formPassword = formData.password;
 
-const formSend = document.querySelector('#search');
 
-formSend.onsubmit = function()
+formData.onsubmit = function()
 {
     if (!validateEmail())
     {
@@ -12,17 +11,20 @@ formSend.onsubmit = function()
         formEmail.style.border= "1px solid red";
         return false
     }
-    if (!validateLogin())
+    if (!validatePassword())
     {
-        alert('Логин слишком короткий')
+        alert('Минимум 8 символов')
         return false
     }
 }
 
+
 function validateEmail() {
     const regEmail = /^([A-Za-z0-9\-\_])+@[a-z]+\.([a-z]{2,4})$/;
-
+    return regEmail.test(formEmail.value);
 }
 
-
-const regLogin = /[a-zA-z0-9]{6,12}/;
+function validatePassword() {
+    const regPassword = /[A-Za-z0-9]{4, 8}]/;
+    return regPassword.test(formPassword.value)
+}
