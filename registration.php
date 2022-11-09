@@ -51,7 +51,7 @@ $user = 'root';      // имя пользователя
 $pass = '';          // пароль
 $name = 'max-polls';      // имя базы данных
 
-$link = mysqli_connect($host, $user, $pass, $name);
+$link = mysqli_connect($host, $user, $pass, $name) or die(mysqli_error($link));
 
 $email=$_POST['email'];
 $password=$_POST['password'];
