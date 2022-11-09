@@ -22,10 +22,8 @@ a { text-decoration: none; }
 
 input:focus, button:focus { border: none; outline: none; }
 
-/*
-font-family: 'Inter', sans-serif;
-font-family: 'Roboto', sans-serif;
-*/
+*, ::before, ::after { -webkit-box-sizing: border-box; box-sizing: border-box; }
+
 body { font-family: 'Roboto', sans-serif; font-size: 20px; }
 
 .container { max-width: 1280px; padding: 0 20px; margin: 0 auto; }
@@ -70,8 +68,15 @@ body { font-family: 'Roboto', sans-serif; font-size: 20px; }
 
 .reg__input { border: none; background: #FFFFFF; border-radius: 10px; font-family: 'Inter'; color: #ABABAB; min-width: 416px; padding: 12px 0 12px 13px; }
 
-.reg__submit { display: inline-block; }
+.reg__submit { display: inline-block; position: relative; padding: 9px 44px; background-color: #FFF; border: none; border-radius: 7px; cursor: pointer; }
+
+.submit__label { position: relative; margin-bottom: 100px; }
+.submit__label:after { content: ''; position: absolute; width: 20px; height: 20px; background-image: url("../img/reg_icons/enter.svg"); top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
 
 .input-group { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; gap: 20px; margin-bottom: 34px; }
+
+.account-authorization { font-family: 'Inter'; font-style: normal; font-weight: 500; font-size: 14px; }
+
+.authorization-img { margin: 9px auto 0 auto; max-width: 285px; }
 
 /*# sourceMappingURL=main.css.map */
