@@ -58,4 +58,11 @@ $password=$_GET['password'];
 
 $query="INSERT INTO users SET email='$email', password='password'";
 
+if(!empty($email) and !empty($password)){
+
+mysqli_query($link,$query) or die(mysqli_error($link));;
+
+header('Refresh: 2 url=index.html');
+
+}
 ?>
