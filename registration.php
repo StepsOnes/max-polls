@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,12 +16,12 @@
     <div class="authorization-content">
         <div class="container">
           <nav class="nav-logo">
-            <a href="#" class="logo">MAX</a>
+            <a href="index.html" class="logo">MAX</a>
           </nav>
           <div class="authorization-block">
             <h1 class="reg__title">Регистрация</h1>
               
-            <form method="post" action="">
+            <form method="POST" action="">
               <div class="form__reg">
                   <div class="input-group">
                     <label for="email">
@@ -44,16 +48,16 @@
     </div>
 </body>
 </html>
+
 <?php
-
 if(!empty($_POST['email']) and !empty($_POST['password'])){
-
+  
 $host = 'localhost'; // имя хоста
 $user = 'cd85792_users';      // имя пользователя
 $pass = 'MaxPolls1';          // пароль
 $name = 'cd85792_users';      // имя базы данных
 
-$link = mysqli_connect($name, $user, $pass, $host) or die(mysqli_error($link));
+$link = mysqli_connect($host, $user, $pass, $name) or die(mysqli_error($link));
 
 $email=$_POST['email'];
 $password=$_POST['password'];
@@ -61,11 +65,11 @@ $password=$_POST['password'];
 $query="INSERT INTO users SET email='$email', password='$password'";
 
 mysqli_query($link,$query) or die(mysqli_error($link));
+  
+$_SESSION['auth']=TRUE;  
 
-header('Location: https://cd85792.tmweb.ru/index.html');
-exit();
+echo 'успешная авторизация';
 
 }
-
 
 ?>
