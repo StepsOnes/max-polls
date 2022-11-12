@@ -62,7 +62,7 @@ $query="INSERT INTO users SET email='$email', password='$password'";
 
 mysqli_query($link,$query) or die(mysqli_error($link));
 
-header('Location https://cd85792.tmweb.ru/index.html');
+header('Location: https://cd85792.tmweb.ru/index.html');
 exit();
 
 }
