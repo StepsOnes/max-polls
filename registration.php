@@ -46,24 +46,24 @@
 </html>
 <?php
 
-$host = 'localhost'; // имя хоста
-$user = 'root';      // имя пользователя
-$pass = '';          // пароль
-$name = 'max-polls';      // имя базы данных
+if(!empty($_POST['email']) and !empty($_POST['password'])){
 
-$link = mysqli_connect($host, $user, $pass, $name) or die(mysqli_error($link));
+$host = 'localhost'; // имя хоста
+$user = 'cd85792_users';      // имя пользователя
+$pass = 'MaxPolls1';          // пароль
+$name = 'cd85792_users';      // имя базы данных
+
+$link = mysqli_connect($name, $user, $pass, $host) or die(mysqli_error($link));
 
 $email=$_POST['email'];
 $password=$_POST['password'];
-
-
-if(!empty($email) and !empty($password)){
 
 $query="INSERT INTO users SET email='$email', password='$password'";
 
 mysqli_query($link,$query) or die(mysqli_error($link));
 
-header('Refresh: 2 url=index.html');
+header('Location https://cd85792.tmweb.ru/index.html');
+exit();
 
 }
 
