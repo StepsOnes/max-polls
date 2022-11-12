@@ -51,7 +51,7 @@ session_start();
 
 <?php
 if(!empty($_POST['email']) and !empty($_POST['password'])){
-  
+
 $host = 'localhost'; // имя хоста
 $user = 'cd85792_users';      // имя пользователя
 $pass = 'MaxPolls1';          // пароль
@@ -68,7 +68,7 @@ mysqli_query($link,$query) or die(mysqli_error($link));
   
 $_SESSION['auth']=TRUE;  
 
-echo 'успешная авторизация';
+echo 'успешная регистрация';
 
 }
 
