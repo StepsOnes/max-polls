@@ -35,7 +35,7 @@ session_start();
                     <input id="sumbit" type="submit" class="reg__submit" value="" >
                   </label>
                   <p class="account-authorization">
-                      У вас уже есть аккаунт? <a href="#">Войдите</a>
+                      У вас уже есть аккаунт? <a href="authorization.php">Войдите</a>
                   </p>
               </div>
             </form>
